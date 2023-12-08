@@ -14,7 +14,7 @@ void os_start(void) { vTaskStartScheduler(); }
  *
  * Do not use this in setup functions.
  */
-void os_delay(uint32_t ms) { vTaskDelay(pdMS_TO_TICKS(ms)); }
+void os_sleep(uint32_t ms) { vTaskDelay(pdMS_TO_TICKS(ms)); }
 
 /**
  * Wrapper of FreeRTOS xTaskCreate.

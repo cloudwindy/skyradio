@@ -8,6 +8,6 @@ void task_watchdog(void *args __attribute__((unused)))
   while (true)
   {
     iwdg_reset();
-    os_delay(50);
+    os_sleep(50);
   }
 }

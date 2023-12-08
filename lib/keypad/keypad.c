@@ -67,7 +67,7 @@ Key keypad_scan(void)
   {
     /* Scan from 1 to 4 */
     keypad_set_col(i, true);
-    usleep(1);
+    udelay(1);
     keys |= keypad_get_rows() << i * 4;
     keypad_set_col(i, false);
   }

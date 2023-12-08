@@ -68,7 +68,7 @@ void w25q_reset(void)
   WRITE(OP_ENABLE_RESET_AND_RESET_DEVICE(true));
 
   deselect();
-  os_delay(100);
+  os_sleep(100);
 }
 
 void w25q_sleep(void)

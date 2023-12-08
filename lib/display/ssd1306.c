@@ -89,7 +89,7 @@ void setup_ssd1306(void)
   reset();
 
   // Wait for the screen to boot
-  sleep(100);
+  mdelay(100);
 
   // Init OLED
   select();
@@ -126,7 +126,7 @@ static void reset(void)
 {
   // Reset the OLED
   gpio_clear(SSD1306_BANK_RES, SSD1306_RES);
-  sleep(1);
+  mdelay(1);
   gpio_set(SSD1306_BANK_RES, SSD1306_RES);
 }
 
@@ -136,7 +136,7 @@ static void write_command(uint8_t opcode)
   // Switch to command mode.
   gpio_clear_s(SSD1306_BANK_DC, SSD1306_DC);
   spi_send(SSD1306_SPI, (uint16_t)opcode);
-  usleep(1);
+  udelay(1);
 }
 
 // Send data.
@@ -148,7 +148,7 @@ static void write_data(uint8_t *data, size_t size)
   while (size--)
   {
     spi_send(SSD1306_SPI, (uint16_t)*data++);
-    usleep(1);
+    udelay(1);
   }
 }
 
@@ -161,9 +161,9 @@ static void deselect(void) { gpio_set_s(SSD1306_BANK_CS, SSD1306_CS); }
  */
 static void gpio_set_s(uint32_t gpioport, uint16_t gpios)
 {
-  usleep(1);
+  udelay(1);
   gpio_set(gpioport, gpios);
-  usleep(1);
+  udelay(1);
 }
 
 /**
@@ -171,7 +171,7 @@ static void gpio_set_s(uint32_t gpioport, uint16_t gpios)
  */
 static void gpio_clear_s(uint32_t gpioport, uint16_t gpios)
 {
-  usleep(1);
+  udelay(1);
   gpio_clear(gpioport, gpios);
-  usleep(1);
+  udelay(1);
 }

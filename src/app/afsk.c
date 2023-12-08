@@ -19,9 +19,9 @@ void test_tx(void)
   while (true)
   {
     gpio_set(GPIOB, GPIO1);
-    sleep(3);
+    mdelay(3);
     gpio_clear(GPIOB, GPIO1);
-    sleep(3);
+    mdelay(3);
   }
   // pwm_gen_rt(&gen, 1200, 1000000, 0);
   // printf("Font TX\n");

@@ -10,9 +10,9 @@ static PwmGenerator led_pwm_gen = {
 void led_blink(void)
 {
   led_on();
-  os_delay(LED_DELAY);
+  os_sleep(LED_DELAY);
   led_off();
-  os_delay(LED_DELAY);
+  os_sleep(LED_DELAY);
 }
 
 void led_on(void) { gpio_clear(LED_BANK, LED); }

@@ -30,7 +30,7 @@ void task_init(void *args __attribute__((unused)))
   state_switch_function(fun_boot);
   if (g_st.ui.extra_boot_time > 0)
   {
-    os_delay(g_st.ui.extra_boot_time);
+    os_sleep(g_st.ui.extra_boot_time);
   }
   state_switch_function(g_st.ui.fun_default);
 

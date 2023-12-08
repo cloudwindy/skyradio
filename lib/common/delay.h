@@ -5,7 +5,7 @@
 
 typedef void (*interval_cb_func)(void);
 
-void sleep(uint32_t ms);
-void usleep(uint16_t us);
+void mdelay(uint32_t ms);
+void udelay(uint16_t us);
 
 #endif

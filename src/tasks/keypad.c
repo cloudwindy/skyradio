@@ -76,6 +76,6 @@ void task_keypad(void *args __attribute__((unused)))
       hold_time = 0;
       hold_repeat_time = 0;
     }
-    os_delay(KEYPAD_TICK);
+    os_sleep(KEYPAD_TICK);
   }
 }

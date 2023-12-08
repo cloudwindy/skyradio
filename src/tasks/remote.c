@@ -117,7 +117,7 @@ void task_remote(void *args __attribute__((unused)))
         }
       }
     }
-    os_delay(REMOTE_TICK);
+    os_sleep(REMOTE_TICK);
   }
 }
 
